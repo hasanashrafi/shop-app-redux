@@ -2,7 +2,7 @@ import React from 'react'
 
 function Products() {
   return (
-    <div className=''>
+    <div className=' min-h-screen'>
     Products
     </div>
   )
