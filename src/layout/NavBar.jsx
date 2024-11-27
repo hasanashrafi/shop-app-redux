@@ -1,44 +1,47 @@
-import React from 'react'
-import { MdFastfood } from 'react-icons/md'
+import React, { useState, useEffect, useRef } from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx';
+import SearchBar from "../modules/SearchBar" 
 
-function NavBar() {
+
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+    const menuRef = useRef(null);
+
+    const handleClickOutside = (event) => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setIsOpen(false);
+        }
+    };
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    }, []);
+
     return (
-
-
-        <nav className="text-primary  border-gray-200 dark:bg-gray-900">
-            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-                    <MdFastfood className='text-primary size-10' />
-                </a>
-                <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                    <span className="sr-only">Open main menu</span>
-                    <svg className="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M1 1h15M1 7h15M1 13h15" />
-                    </svg>
-                </button>
-                <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                    <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 transition-all ease-in-out bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                        <li>
-                            <a href="#" className="hover:border-b-2 hover:shadow-lg block py-2 px-3 text-white bg-blue-700 transition-all ease-in-out md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:border-b-2 hover:shadow-lg block py-2 px-3 text-gray-900 transition-all ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-                        </li>
-                        <li>
-                            <a href="/products" className="hover:border-b-2 hover:shadow-lg block py-2 px-3 text-gray-900 transition-all ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Products</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:border-b-2 hover:shadow-lg block py-2 px-3 text-gray-900 transition-all ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-                        </li>
-                        <li>
-                            <a href="#" className="hover:border-b-2 hover:shadow-lg block py-2 px-3 text-gray-900 transition-all ease-in-out hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                        </li>
-                    </ul>
+        <nav className="text-primary p-2 shadow-md shadow-[#6dca5144]">
+            <div className="flex justify-around items-center">
+                <div className=" text-lg">
+               <SearchBar/>
+                </div>
+                <div className="sm:hidden">
+                    <button onClick={() => setIsOpen(!isOpen)} className="text-white focus:outline-none">
+                    <RxHamburgerMenu className='size-6' />
+                    </button>
+                </div>
+                <div ref={menuRef} className={`sm:flex ${isOpen ? 'fixed h-screen backdrop-blur-lg w-1/2 right-0 top-0 bg-[#6dca512d] ' : 'hidden'} md:items-center`}>
+                    <div className='p-2 flex flex-col sm:flex-row items-center '>
+                        <a href="#" className="mt-3 hover:shadow-md rounded-md  hover:shadow-primary text-white px-4 py-1">Home</a>
+                        <a href="#" className="mt-5 hover:shadow-md rounded-md hover:shadow-primary text-white px-4 py-1">About</a>
+                        <a href="#" className="mt-5 hover:shadow-md rounded-md hover:shadow-primary text-white px-4 py-1">Services</a>
+                        <a href="#" className="mt-5 hover:shadow-md rounded-md hover:shadow-primary text-white px-4 py-1">Contact</a>
+                    </div>
                 </div>
             </div>
         </nav>
+    );
+};
 
-    )
-}
-
-export default NavBar
+export default Navbar;
