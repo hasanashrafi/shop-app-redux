@@ -13,8 +13,7 @@ export default {
       light: '#FFFBE6',
       error: '#FF0000',
       background: "#f3f1f1dc",
-
-
+      rate: "#fde047",
     }
   },
   plugins: [],
