@@ -6,11 +6,11 @@ function SearchBar() {
 
   return (
     <div className='flex items-center ml-2'>
-      <BiSearch className='size-6 sm:size-8 cursor-pointer' onClick={() => setSearchBox(!searchBox)} />
+      <BiSearch className='size-6 sm:size-8 cursor-pointer text-background' onClick={() => setSearchBox(!searchBox)} />
       <input
         type='text'
         placeholder='Search'
-        className={`duration-300 transition-transform ease-in-out  rounded-xl h-[32px] px-2 py-0.5  text-primary outline-none border-primary border transform ${searchBox ? 'scale-100' : 'scale-0'}`}
+        className={`duration-300 transition-transform ease-in-out  rounded-xl h-[32px] px-2 py-0.5  text-background outline-none border-light border transform ${searchBox ? 'scale-100' : 'scale-0'}`}
       />
     </div>
   );
