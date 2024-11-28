@@ -21,7 +21,6 @@ function ProductsCard({ product }) {
         <p className=' my-3 text-gray-500 '>
           {product.price}
         </p>
-
       </div>
     </div>
   )
