@@ -5,7 +5,7 @@ const ProductContext = createContext()
 
 function ProductProvider({ children }) {
     const [products, setProducts] = useState([])
-  
+
     /* The `useEffect` hook in the code snippet is responsible for fetching products from an API endpoint
   when the component mounts. Here's a breakdown of what it does: */
     useEffect(() => {
@@ -36,5 +36,11 @@ const useProducts = () => {
     return products
 }
 
+const useProductsDetail = id => {
+    const products = useContext(ProductContext)
+    const product = products.find((product) => product.id === id);
+    return product
+}
+
 export default ProductProvider;
-export { useProducts }
+export { useProducts, useProductsDetail }
