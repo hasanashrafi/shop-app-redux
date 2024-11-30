@@ -13,13 +13,13 @@ function ProductDetail() {
 
 
     return (
-        <div className='min-h-screen p-5 mx-auto'>
+        <div className='min-h-screen p-5 mx-auto '>
             <p className="text-primary font-semibold p-0.5 border-b-2 border-primary w-fit mb-7">
                 ProductDetail:
             </p>
             {product ? (
-                <div className=' '>
-                    <div className='flex'>
+                <div className=' sm:flex'>
+                    <div className='sm:flex sm:flex-row flex flex-col justify-center items-center'>
                         <img src={product.image} className='h-full rounded-bl-3xl rounded-tr-3xl shadow-2xl rounded-md  size-64' />
                         <div className=" p-2 m-2 flex flex-col  ">
                             <h2 className='font-semibold w-full'>{truncatedTitle(product.title)}</h2>
