@@ -1,7 +1,5 @@
 import React from 'react'
 
-import { BrowserRouter, Route } from 'react-router';
-import { Routes } from 'react-router';
 
 // Import other components for your routes
 
@@ -11,6 +9,7 @@ import Home from '../components/Home';
 import ProductDetail from '../components/ProductDetail';
 import CheckOut from '../components/CheckOut';
 import ProductProvider from '../context/ProductContext';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 
 function Router() {
