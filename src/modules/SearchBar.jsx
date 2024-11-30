@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
+import { CiSearch } from 'react-icons/ci';
 
 function SearchBar() {
   const [searchBox, setSearchBox] = useState(false);
 
   return (
     <div className='flex items-center ml-2'>
-      <BiSearch className='size-6 sm:size-8 cursor-pointer text-background' onClick={() => setSearchBox(!searchBox)} />
+      <CiSearch  className='size-6 sm:size-8 cursor-pointer text-background' onClick={() => setSearchBox(!searchBox)} />
       <input
         type='text'
         placeholder='Search'
