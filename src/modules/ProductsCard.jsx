@@ -20,7 +20,7 @@ function ProductsCard({ product }) {
           {product.rating.rate}
         </p>
       </div>
-      <img src={product.image} className='bg-[#dde4dde8] p-1 rounded-bl-3xl rounded-tr-3xl  w-[95%] h-[235px] mx-auto' />
+      <img src={product.image} className='bg-[#6b2bd928] p-0.5 rounded-bl-3xl rounded-tr-3xl  w-[95%] h-[235px] mx-auto' />
       <h1 className='text-center my-3 font-semibold text-primary'>{truncatedTitle(product.title)}</h1>
       <div className='p-2'>
         {/* <p className='text-pretty'>
@@ -34,7 +34,7 @@ function ProductsCard({ product }) {
       </div>
       <div className='px-2 m-2 flex items-center justify-between'>
         <Link to={`/products/${product.id}`}>
-          <TbShoppingBagExclamation className='text-dark text-3xl hover:text-[#0a42dd] transition-all ease-in-out ' />
+          <TbShoppingBagExclamation className='text-dark text-3xl hover:text-[#6C2BD9] transition-all ease-in-out ' />
         </Link>
 
         <button className=' text-primary hover:text-[#0add0a] transition-all ease-in-out '>
