@@ -63,7 +63,7 @@ function Products() {
         <SearchBar search={search} setSearch={setSearch} searchHandler={searchHandler} />
       </div> */}
 
-      <div className='flex items-center ml-2 w-1/4 md:w-1/3'>
+      <div className='flex items-center ml-2 justify-center my-4'>
           {
             searchBox ? (
               <LuSearchCheck className='size-6 sm:size-8 cursor-pointer text-dark mr-1'
@@ -79,7 +79,7 @@ function Products() {
             value={search}
             type='text'
             placeholder='Search'
-            className={`md:w-full w-24 border duration-300 transition-transform ease-in-out  rounded-xl h-[32px] px-2 py-0.5  text-dark outline-none border-dark transform ${searchBox ? 'scale-100' : 'scale-0'}`}
+            className={` border duration-300 transition-transform ease-in-out  rounded-xl h-[32px] px-2 py-0.5  text-dark outline-none border-[#620f99] transform ${searchBox ? 'scale-100' : 'scale-0'}`}
           />
 
         </div>
