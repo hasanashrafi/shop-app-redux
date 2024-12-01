@@ -11,24 +11,26 @@ import SearchBar from '../modules/SearchBar';
 import { CiSearch } from 'react-icons/ci';
 import { LuSearchCheck } from 'react-icons/lu';
 import { filterProducts, searchProducts } from '../utils/helper';
+import { useSearchParams } from 'react-router-dom';
 
 function Products() {
   const [display, setDisplay] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const products = useProducts();
 
-
   const [search, setSearch] = useState("");
   const [query, setQuery] = useState({})
   const [searchBox, setSearchBox] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams()
 
   useEffect(() => {
     setDisplay(products);
   }, [products]);
 
   useEffect(() => {
+    setSearchParams(query)
     let finalProducts = searchProducts(products, query.search)
-    finalProducts = filterProducts(finalProducts, query.category) 
+    finalProducts = filterProducts(finalProducts, query.category)
 
     setDisplay(finalProducts)
   }, [query]);
@@ -61,34 +63,34 @@ function Products() {
         <SearchBar search={search} setSearch={setSearch} searchHandler={searchHandler} />
       </div> */}
 
-      <div className='flex items-center ml-2'>
-        {
-          searchBox ? (
-            <LuSearchCheck className='size-6 sm:size-8 cursor-pointer text-dark mr-1'
-              onClick={searchHandler} />
-          ) : (
-            <CiSearch className='size-6 sm:size-8 cursor-pointer text-background mr-1'
-              onClick={() => setSearchBox(!searchBox)} />
-          )
-        }
+      <div className='flex items-center ml-2 w-1/4 md:w-1/3'>
+          {
+            searchBox ? (
+              <LuSearchCheck className='size-6 sm:size-8 cursor-pointer text-dark mr-1'
+                onClick={searchHandler} />
+            ) : (
+              <CiSearch className='size-6 sm:size-8 cursor-pointer text-dark mr-1'
+                onClick={() => setSearchBox(!searchBox)} />
+            )
+          }
 
-        <input
-          onChange={(e) => setSearch(e.target.value.toLowerCase().trim())}
-          value={search}
-          type='text'
-          placeholder='Search'
-          className={`duration-300 transition-transform ease-in-out  rounded-xl h-[32px] px-2 py-0.5  text-dark outline-none border-light border transform ${searchBox ? 'scale-100' : 'scale-0'}`}
-        />
+          <input
+            onChange={(e) => setSearch(e.target.value.toLowerCase().trim())}
+            value={search}
+            type='text'
+            placeholder='Search'
+            className={`md:w-full w-24 border duration-300 transition-transform ease-in-out  rounded-xl h-[32px] px-2 py-0.5  text-dark outline-none border-dark transform ${searchBox ? 'scale-100' : 'scale-0'}`}
+          />
 
-      </div>
+        </div>
 
-      <div className='w-full text-dark p-2 flex justify-center my-5'>
-        <ul className='flex items-center justify-around gap-x-3'>
+      <div className='w-full text-dark p-2  flex justify-center my-5'>
+        <ul className='grid grid-cols-2 gap-3 md:flex md:items-center md:justify-around md:gap-x-3'>
           {categories.map((category) => (
             <li
               key={category.id}
               onClick={() => categoryHandler(category)}
-              className={`cursor-pointer flex items-center gap-x-1 rounded-xl p-2 ${selectedCategory === category.id ? 'bg-[#6C2BD9] text-background' : 'bg-[#f8f6fa] text-dark'}`}
+              className={` justify-center cursor-pointer flex items-center gap-x-1 rounded-xl p-2 ${selectedCategory === category.id ? 'bg-[#6C2BD9] text-background' : 'bg-[#f8f6fa] text-dark'}`}
             >
               {category.icon}
               {category.name}
