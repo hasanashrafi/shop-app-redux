@@ -22,7 +22,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="h-96 bg-center p-2 sm:h-[650px] bg-cover bg-no-repeat sm:bg-cover sm:bg-center bg-[url('/images/header.jpg')]">
+        <nav className="h-96 bg-center p-2 sm:h-[350px] md:h-[450px] lg:h-[550px] bg-cover bg-no-repeat sm:bg-cover sm:bg-center bg-[url('/images/header.jpg')]">
             <div className="flex justify-between items-center">
                 <div className="flex items-center text-background text-lg">
                     <div
