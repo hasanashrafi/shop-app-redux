@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { RxHamburgerMenu } from 'react-icons/rx';
-import SearchBar from "../modules/SearchBar";
 import { CiShoppingCart } from 'react-icons/ci';
 
 const Navbar = () => {
@@ -37,7 +36,7 @@ const Navbar = () => {
                             </div>
                         )}
                     </div>
-                    <SearchBar />
+                    {/* <SearchBar /> */}
                 </div>
                 <div className="sm:hidden text-background">
                     <button onClick={() => setIsOpen(!isOpen)} className="text-background focus:outline-none">
