@@ -21,7 +21,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <nav className="h-96 bg-center p-2 sm:h-[350px] md:h-[450px] lg:h-[550px] bg-cover bg-no-repeat sm:bg-cover sm:bg-center bg-[url('/images/header.jpg')]">
+        <nav className=" h-96 bg-center p-2 sm:h-[350px] md:h-[450px] lg:h-[550px] bg-cover bg-no-repeat sm:bg-cover sm:bg-center bg-[url('/images/header.jpg')]">
             <div className="flex justify-between items-center">
                 <div className="flex items-center text-background text-lg">
                     <div
@@ -45,10 +45,10 @@ const Navbar = () => {
                 </div>
                 <div ref={menuRef} className={`sm:flex ${isOpen ? 'fixed z-10 h-screen backdrop-blur-lg text-background w-1/2 right-0 top-0 bg-[#6dca512d]' : 'hidden'} md:items-center`}>
                     <div className='p-2 flex flex-col sm:flex-row sm:items-center justify-center '>
-                        <a href="#" className="mt-3 sm:m-0 text-background px-4 py-1">Home</a>
-                        <a href="#" className="mt-5 sm:m-0 text-background px-4 py-1">About</a>
+                        <a href="/" className="mt-3 sm:m-0 text-background px-4 py-1">Home</a>
+                        <a href="/" className="mt-5 sm:m-0 text-background px-4 py-1">About</a>
                         <a href="/products" className="mt-5 sm:m-0 text-background px-4 py-1">Products</a>
-                        <a href="#" className="mt-5 sm:m-0 text-background px-4 py-1">Contact</a>
+                        <a href="/" className="mt-5 sm:m-0 text-background px-4 py-1">Contact</a>
                     </div>
                 </div>
             </div>
