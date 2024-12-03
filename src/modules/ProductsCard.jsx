@@ -27,7 +27,7 @@ function ProductsCard({ product }) {
           {product.rating.rate}
         </p>
       </div>
-      <img src={product.image} className='bg-[#6b2bd928] p-0.5 rounded-bl-3xl rounded-tr-3xl  w-[95%] h-[200px] object-fill mx-auto' />
+      <img loading="lazy" src={product.image} className='bg-[#6b2bd928] p-0.5 rounded-bl-3xl rounded-tr-3xl  w-[95%] h-[200px] object-fill mx-auto' />
       <h1 className='text-center my-3 font-semibold text-primary'>{truncatedTitle(product.title)}</h1>
       <div className='p-2'>
         <p className='text-dark flex items-center gap-x-2  p-2 text-gray-500 '>
