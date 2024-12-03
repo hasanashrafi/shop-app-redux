@@ -42,6 +42,13 @@ const reducer = (state, action) => {
                 ...state,
                 ...sumProducts(state.selectedItems),
             }
+        case "CHECK_OUT":
+            return {
+                selectedItems: [],
+                itemsCounter: 0,
+                total: 0,
+                checkout: true,
+            }
         default:
             throw new Error("invalid action")
 
