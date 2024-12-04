@@ -52,30 +52,39 @@ function ProductsCard({ product }) {
 
         {
           quantity === 0 ? (<button
-          onClick={() => clickHandler("ADD_ITEM")}
-          className=' text-primary hover:text-[#0add0a] transition-all ease-in-out '>
-          <TbShoppingBagPlus className='text-3xl font-semibold' />
-        </button>) : (
-          <div className='flex items-center gap-x-3'>
-
+            onClick={() => clickHandler("ADD_ITEM")}
+            className=' text-primary hover:text-[#0add0a] transition-all ease-in-out '>
+            <TbShoppingBagPlus className='text-3xl font-semibold' />
+          </button>) : (
             <button
               onClick={() => clickHandler("INCREASE")}
               className=' text-2xl text-primary hover:text-[#180add] transition-all ease-in-out '>
               +
             </button>
-            <span>{quantity}</span>
+
+          )}
+
+        {quantity > 0 && <span>{quantity}</span>}
+        {
+          quantity > 1 && (
             <button
               onClick={() => clickHandler("DECREASE")}
               className=' text-2xl text-primary hover:text-[#180add] transition-all ease-in-out '>
               -
             </button>
+          )
+
+        }
+        {
+          quantity === 1 && (
             <button
               onClick={() => clickHandler("REMOVE_ITEM")}
-              className='  text-primary rounded p-1 hover:text-blue-500 '>
+              className=' text-xl text-primary rounded p-1 hover:text-blue-500 '>
               <FaTrash />
             </button>
-          </div>
-        )}
+
+          )
+        }
 
       </div>
     </div>
