@@ -11,6 +11,7 @@ import CheckOut from '../components/CheckOut';
 import ProductProvider from '../context/ProductContext';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import CardProvider from '../context/CardContext';
+import Layout from '../layout/Layout';
 
 
 function Router() {
@@ -20,15 +21,18 @@ function Router() {
     <CardProvider>
       <ProductProvider>
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products" element={<Products />} />
-            <Route path="/products/:id" element={<ProductDetail />} />
-            <Route path="/checkout" element={<CheckOut />} />
-            {/* <Route path="/about" element={<About />} /> */}
-            {/* Add more routes as needed */}
-            <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 */}
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:id" element={<ProductDetail />} />
+              <Route path="/checkout" element={<CheckOut />} />
+              {/* <Route path="/about" element={<About />} /> */}
+              {/* Add more routes as needed */}
+              <Route path="*" element={<NotFound />} /> {/* Catch-all for 404 */}
+            </Routes>
+          </Layout>
+
         </BrowserRouter>
       </ProductProvider>
     </CardProvider>
