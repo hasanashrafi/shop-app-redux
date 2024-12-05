@@ -30,11 +30,11 @@ const Navbar = ({ state }) => {
                     <div className="relative ">
                         <CiShoppingCart className='size-8 cursor-pointer' onClick={handleCartToggle} />
                         {isHovered && (
-                            <div className="absolute w-[450px] left-2 top-10 p-6 bg-background text-dark backdrop-blur-lg rounded-lg shadow-lg">
+                            <div className="absolute w-[350px] left-0 sm:w-[450px] sm:left-2 top-10 p-6 bg-background text-dark backdrop-blur-lg rounded-lg shadow-lg">
 
                                 {
                                     !state.selectedItems.length &&
-                                    <p className='p-3 bg-error-200 text-error-700 rounded-lg m-4'>
+                                    <p className='text-center p-3 bg-error-200 text-error-700 rounded-lg m-4'>
                                         Shopping Cart Is Empty
                                     </p>
                                 }
