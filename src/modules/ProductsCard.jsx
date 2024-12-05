@@ -75,7 +75,7 @@ function ProductsCard({ product }) {
             )
           }
           {
-            quantity > 0 &&
+           !! quantity  &&
             <span>
               {quantity}
             </span>
