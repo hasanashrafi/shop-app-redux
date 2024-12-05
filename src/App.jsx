@@ -4,9 +4,9 @@ function App() {
 
 
   return (
-    <Layout>
+    
       <Router />
-    </Layout>
+   
   )
 }
 
