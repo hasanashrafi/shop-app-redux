@@ -7,7 +7,7 @@ import 'react-slideshow-image/dist/styles.css';
 
 const Slideshow = () => {
     const products = useProducts()
-
+    
     return (
         <div className="slide-container   p-2">
             <Slide
