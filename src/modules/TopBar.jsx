@@ -3,7 +3,6 @@ import { BiCategory } from 'react-icons/bi';
 import { GiBigDiamondRing, GiClothes, GiLoincloth } from 'react-icons/gi';
 import { MdLaptopChromebook } from 'react-icons/md';
 
-
 function TopBar({ setQuery }) {
     const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -26,13 +25,13 @@ function TopBar({ setQuery }) {
                     <li
                         key={category.id}
                         onClick={() => categoryHandler(category)}
-                        className={` justify-center cursor-pointer flex items-center gap-x-1 rounded-xl p-2 ${selectedCategory === category.id ? 'bg-[#6C2BD9] text-background' : 'bg-[#f8f6fa] text-dark'}`}
-                    >
+                        className={` justify-center cursor-pointer flex items-center gap-x-1 rounded-xl p-2 ${selectedCategory === category.id ? 'bg-[#6C2BD9] text-background' : 'bg-[#f8f6fa] text-dark'}`}>
                         {category.icon}
                         {category.name}
                     </li>
                 ))}
-            </ul></div>
+            </ul>
+        </div>
     )
 }
 
