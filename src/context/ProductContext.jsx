@@ -36,7 +36,7 @@ const useProducts = () => {
     return products
 }
 
-const useProductsDetail = id => {
+const useProductsDetail = (id) => {
     const products = useContext(ProductContext)
     const product = products.find((product) => product.id === id);
     return product
