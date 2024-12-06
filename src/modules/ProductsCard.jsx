@@ -1,27 +1,23 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
+
 import { useCard } from '../context/CardContext';
 import { truncatedTitle } from '../utils/truncate'
+import { productQuantity } from '../utils/helper';
 
 import { TbShoppingBagCheck, TbShoppingBagExclamation, TbShoppingBagPlus } from 'react-icons/tb';
 import { FaHandHoldingDollar, FaTrash } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 
-import { productQuantity } from '../utils/helper';
 
 function ProductsCard({ product }) {
   const { id, title, price, image, rating } = product
   const [state, dispatch] = useCard()
-
-
   const quantity = productQuantity(state, id)
-  console.log(quantity)
-
+  
   const clickHandler = (type) => {
     dispatch({ type, payload: product })
   }
-
-
 
   return (
     <div className=' shadow-lg p-1 w-64 h-fit my-2 rounded-md backdrop-blur-lg bg-[#fff] '>
