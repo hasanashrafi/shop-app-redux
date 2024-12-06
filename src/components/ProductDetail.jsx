@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
+
 import { useProductsDetail } from '../context/ProductContext'
 import { truncatedTitle } from '../utils/truncate'
-import { FaHandHoldingDollar } from 'react-icons/fa6';
 import Loader from './Loader';
-import { BiLeftArrow } from 'react-icons/bi';
+
+import { FaHandHoldingDollar } from 'react-icons/fa6';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 
 function ProductDetail() {
