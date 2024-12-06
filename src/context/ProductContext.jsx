@@ -6,8 +6,6 @@ const ProductContext = createContext()
 function ProductProvider({ children }) {
     const [products, setProducts] = useState([])
 
-    /* The `useEffect` hook in the code snippet is responsible for fetching products from an API endpoint
-  when the component mounts. Here's a breakdown of what it does: */
     useEffect(() => {
         try {
             api.get("/products")
@@ -17,7 +15,6 @@ function ProductProvider({ children }) {
         }
     }, [])
 
-
     return (
         <ProductContext.Provider value={products}>
             {children}
@@ -25,12 +22,6 @@ function ProductProvider({ children }) {
     )
 }
 
-/**
- * The useProducts function retrieves and returns the products from the ProductContext using useContext
- * in React.
- * @returns The `useProducts` function is returning the products obtained from the `ProductContext`
- * using the `useContext` hook.
- */
 const useProducts = () => {
     const products = useContext(ProductContext)
     return products
