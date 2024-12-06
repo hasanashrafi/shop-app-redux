@@ -5,12 +5,10 @@ import { useCard } from '../context/CardContext'
 
 function Layout({ children }) {
     
-    const [state] = useCard()
-    console.log(state)
 
     return (
         <div className=''>
-            <NavBar state={state} />
+            <NavBar />
             {children}
             <Footer />
         </div>
