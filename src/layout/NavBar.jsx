@@ -1,15 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { CiShoppingCart } from 'react-icons/ci';
-import { truncatedTitle } from '../utils/truncate';
 import { Link } from 'react-router-dom';
+
 import { BiTrash } from 'react-icons/bi';
+import { CiShoppingCart } from 'react-icons/ci';
+import { RxHamburgerMenu } from 'react-icons/rx';
+
 import { useCard } from '../context/CardContext';
+import { truncatedTitle } from '../utils/truncate';
 
 const Navbar = () => {
     const [state, dispatch] = useCard()
-    console.log(state)
-
+  
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const menuRef = useRef(null);
@@ -90,7 +91,7 @@ const Navbar = () => {
                                 )}
                                 {!!state.selectedItems.length && (
                                     <Link to="/checkout" className="block text-center w-full bg-green-500 mt-2 rounded-xl p-2 text-background">
-                                        CheckOut
+                                        Check Out
                                     </Link>
                                 )}
                             </div>
