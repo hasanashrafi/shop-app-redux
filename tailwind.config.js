@@ -55,7 +55,7 @@ export default {
         800: "#660000",
         900: "#330000"
       },
-      background: "#f3f1f1dc",
+      background: "#e9f9f9",
       rate: "#fde047",
     }
   },
