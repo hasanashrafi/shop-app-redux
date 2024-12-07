@@ -2,9 +2,8 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import { useCard } from '../context/CardContext'
-import { truncatedTitle } from '../utils/truncate'
+import BasketCard from '../modules/BasketCard'
 
-import { FaTrash } from 'react-icons/fa6'
 import { IoMdArrowRoundBack } from 'react-icons/io'
 
 function CheckOut() {
@@ -24,43 +23,7 @@ function CheckOut() {
                 </p>
             )}
             {state.selectedItems.map((product) => (
-                <div key={product.id} className="mt-4 flex flex-col gap-y-1">
-                    <div className="bg-background rounded-md p-2 flex items-center gap-x-2 justify-between">
-                        <img src={product.image} className="size-12 rounded-md" />
-                        <p>{truncatedTitle(product.title)}</p>
-                        <span className="text-error-400 p-2 text-center rounded-full">
-                            x{product.quantity}
-                        </span>
-                        <p className="text-green-500">${product.price}</p>
-
-                        <div className='flex items-center gap-x-3'>
-                            {product.quantity > 1 && (
-                                <button
-                                    onClick={() => clickHandler("DECREASE", product)}
-                                    className='text-2xl text-primary hover:text-[#180add] transition-all ease-in-out'>
-                                    -
-                                </button>
-                            )}
-                            {!!product.quantity &&
-                                <span>
-                                    {product.quantity}
-                                </span>
-                            }
-                            <button
-                                onClick={() => clickHandler("INCREASE", product)}
-                                className='text-2xl text-primary hover:text-[#180add] transition-all ease-in-out'>
-                                +
-                            </button>
-                        </div>
-                        {product.quantity > 0 && (
-                            <button
-                                onClick={() => clickHandler("REMOVE_ITEM", product)}
-                                className='text-error-200 rounded p-1 hover:text-[#dd110a] transition-all ease-in-out'>
-                                <FaTrash />
-                            </button>
-                        )}
-                    </div>
-                </div>
+                <BasketCard key={product.id} product={product} clickHandler={clickHandler}  />
             ))}
 
             <div>
