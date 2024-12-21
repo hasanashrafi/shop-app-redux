@@ -8,12 +8,8 @@ const filterProducts = (products, category) => {
     return products.filter((product) => product.category === category)
 }
 
-const sumProducts = (products) => {
-    const itemsCounter = products.reduce((counter, product) => counter + product.quantity, 0);
-    const total = products.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
 
-    return { itemsCounter, total };
-};
+
 
 const productQuantity = (state, id) => {
     const index = state.selectedItems.findIndex((item) => item.id === id)
@@ -24,4 +20,22 @@ const productQuantity = (state, id) => {
     }
 }
 
-export { searchProducts, filterProducts, sumProducts, productQuantity }
+
+const sumPrice = () => {
+    return products.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+
+}
+
+const sumQuantity = () => {
+    return products.reduce((counter, product) => counter + product.quantity, 0);
+}
+
+
+
+export {
+    searchProducts,
+    filterProducts,
+    sumPrice,
+    sumQuantity,
+    productQuantity
+}
