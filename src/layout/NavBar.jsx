@@ -1,18 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { BiTrash } from 'react-icons/bi';
+// import { BiTrash } from 'react-icons/bi';
 import { CiShoppingCart } from 'react-icons/ci';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-import { useCard } from '../context/CardContext';
-import { truncatedTitle } from '../utils/truncate';
-import { FaTrash } from 'react-icons/fa6';
+// import { useCard } from '../context/CardContext';
+// import { truncatedTitle } from '../utils/truncate';
+// import { FaTrash } from 'react-icons/fa6';
 import BasketCard from '../modules/BasketCard';
 
 const Navbar = () => {
-    const [state, dispatch] = useCard()
-  
+    // const [state, dispatch] = useCard()
+//   console.log(state)
+
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const menuRef = useRef(null);
@@ -58,26 +59,26 @@ const Navbar = () => {
                     <div className="relative">
                         <div className="relative">
                             <CiShoppingCart className="size-9 cursor-pointer" onClick={handleCartToggle} />
-                            {!!state.itemsCounter && (
+                            {/* {!!state.itemsCounter && (
                                 <span className="absolute flex items-center justify-center top-0 right-0 left-4   text-sm bg-error-500  rounded-full  size-5 text-center">
                                     {state.itemsCounter}
                                 </span>
-                            )}
+                            )} */}
                         </div>
 
                         {isHovered && (
                             <div className="absolute z-10 w-[350px] left-0 sm:w-[450px] sm:left-2 top-10 p-6  bg-background text-dark backdrop-blur-lg rounded-lg shadow-lg">
-                                {!state.selectedItems.length && (
+                                {/* {!state.selectedItems.length && (
                                     <p className="text-center p-3 bg-error-200 text-error-700 rounded-lg m-4">
                                         Shopping Cart Is Empty
                                     </p>
-                                )}
+                                )} */}
 
-                                {state.selectedItems.map((product) => (
+                                {/* {state.selectedItems.map((product) => (
                                    <BasketCard clickHandler={clickHandler} key={product.id} product={product}/>
-                                ))}
+                                ))} */}
 
-                                {!!state.total && (
+                                {/* {!!state.total && (
                                     <div className="p-2 mt-5 flex items-center justify-between">
                                         <p className="text-dark">Total Price:</p>
                                         <p className="text-green-500 font-semibold">${state.total}</p>
@@ -87,7 +88,7 @@ const Navbar = () => {
                                     <Link to="/checkout" className="block text-center w-full bg-green-500 mt-2 rounded-xl p-2 text-background">
                                         Check Out
                                     </Link>
-                                )}
+                                )} */}
                             </div>
                         )}
                     </div>
