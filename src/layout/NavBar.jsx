@@ -9,10 +9,12 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 // import { truncatedTitle } from '../utils/truncate';
 // import { FaTrash } from 'react-icons/fa6';
 import BasketCard from '../modules/BasketCard';
+import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const state = useSelector(store => store.cart)
     // const [state, dispatch] = useCard()
-//   console.log(state)
+    //   console.log(state)
 
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
@@ -32,7 +34,7 @@ const Navbar = () => {
         setIsHovered(!isHovered);
     };
 
-  
+
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -46,11 +48,8 @@ const Navbar = () => {
         };
     }, [menuRef]);
 
-    const clickHandler = (type, product) => {
-        dispatch({ type, payload: product })
-    }
-    // const storedProducts = JSON.parse(localStorage.getItem('products')) || [];
-    // console.log(st)
+
+    const dispatch = useDispatch()
 
     return (
         <nav className="h-96 bg-center p-2 sm:h-[350px] md:h-[450px] lg:h-[550px] bg-cover bg-no-repeat sm:bg-cover sm:bg-center bg-[url('/images/header.jpg')]">
@@ -59,26 +58,26 @@ const Navbar = () => {
                     <div className="relative">
                         <div className="relative">
                             <CiShoppingCart className="size-9 cursor-pointer" onClick={handleCartToggle} />
-                            {/* {!!state.itemsCounter && (
+                            {!!state.itemsCounter && (
                                 <span className="absolute flex items-center justify-center top-0 right-0 left-4   text-sm bg-error-500  rounded-full  size-5 text-center">
                                     {state.itemsCounter}
                                 </span>
-                            )} */}
+                            )}
                         </div>
 
                         {isHovered && (
-                            <div className="absolute z-10 w-[350px] left-0 sm:w-[450px] sm:left-2 top-10 p-6  bg-background text-dark backdrop-blur-lg rounded-lg shadow-lg">
-                                {/* {!state.selectedItems.length && (
+                            <div className="absolute w-[350px] left-0 sm:w-[550px] sm:left-2 top-10 p-3  bg-background text-dark  rounded-lg shadow-lg">
+                                {!state.selectedItems.length && (
                                     <p className="text-center p-3 bg-error-200 text-error-700 rounded-lg m-4">
                                         Shopping Cart Is Empty
                                     </p>
-                                )} */}
+                                )}
 
-                                {/* {state.selectedItems.map((product) => (
-                                   <BasketCard clickHandler={clickHandler} key={product.id} product={product}/>
-                                ))} */}
+                                {state.selectedItems.map((product) => (
+                                    <BasketCard dispatch={dispatch} key={product.id} product={product} />
+                                ))}
 
-                                {/* {!!state.total && (
+                                {!!state.total && (
                                     <div className="p-2 mt-5 flex items-center justify-between">
                                         <p className="text-dark">Total Price:</p>
                                         <p className="text-green-500 font-semibold">${state.total}</p>
@@ -88,7 +87,7 @@ const Navbar = () => {
                                     <Link to="/checkout" className="block text-center w-full bg-green-500 mt-2 rounded-xl p-2 text-background">
                                         Check Out
                                     </Link>
-                                )} */}
+                                )}
                             </div>
                         )}
                     </div>
