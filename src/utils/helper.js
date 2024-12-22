@@ -21,13 +21,13 @@ const productQuantity = (state, id) => {
 }
 
 
-const sumPrice = () => {
-    return products.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
+const sumPrice = (product) => {
+    return product.reduce((total, product) => total + product.price * product.quantity, 0).toFixed(2);
 
 }
 
-const sumQuantity = () => {
-    return products.reduce((counter, product) => counter + product.quantity, 0);
+const sumQuantity = (product) => {
+    return product.reduce((counter, product) => counter + product.quantity, 0);
 }
 
 
