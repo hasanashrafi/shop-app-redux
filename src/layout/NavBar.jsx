@@ -1,24 +1,19 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-// import { BiTrash } from 'react-icons/bi';
 import { CiShoppingCart } from 'react-icons/ci';
 import { RxHamburgerMenu } from 'react-icons/rx';
 
-// import { useCard } from '../context/CardContext';
-// import { truncatedTitle } from '../utils/truncate';
-// import { FaTrash } from 'react-icons/fa6';
 import BasketCard from '../modules/BasketCard';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
     const state = useSelector(store => store.cart)
-    // const [state, dispatch] = useCard()
-    //   console.log(state)
 
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const menuRef = useRef(null);
+   
     const links = [
         { href: "/", text: "Home" },
         { href: "/", text: "About" },
@@ -34,7 +29,6 @@ const Navbar = () => {
         setIsHovered(!isHovered);
     };
 
-
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
@@ -47,7 +41,6 @@ const Navbar = () => {
             document.removeEventListener('mousedown', handleOutsideClick);
         };
     }, [menuRef]);
-
 
     const dispatch = useDispatch()
 

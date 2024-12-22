@@ -10,31 +10,31 @@ function BasketCard({ product, dispatch }) {
                 <img src={product.image} alt={product.title} className="size-12 rounded-md" />
                 <p className=' flex-1 text-xs'>{truncatedTitle(product.title)}</p>
                 <span className="text-error-400 p-2 text-center rounded-full">
-                    x{product.quantity}
+                    x
+                    {product.quantity}
                 </span>
                 <p className="text-green-500">${(product.price * product.quantity).toFixed(2)}</p>
 
                 {product.quantity > 1 && (
-                        <button
-                            onClick={() => dispatch(decrease(product))}
-                            className=' hover:text-blue-100 sm:text-2xl text-error-500 transition-all ease-in-out'>
-                            -
-                        </button>
-                    )}
-                    <span>{product.quantity}</span>
                     <button
-                        onClick={() => dispatch(increase(product))}
-                        className=' hover:text-blue-100 sm:text-2xl text-green-500 transition-all ease-in-out'>
-                        +
+                        onClick={() => dispatch(decrease(product))}
+                        className=' hover:text-blue-100 sm:text-2xl text-error-500 transition-all ease-in-out'>
+                        -
                     </button>
-
-                    <button
-                        onClick={() => dispatch(removeItem(product))}
-                        className=' text-error-200 rounded  hover:text-[#dd110a] transition-all ease-in-out'>
-                        <FaTrash className='size-4' />
-                    </button>
+                )}
+                <span>{product.quantity}</span>
+                <button
+                    onClick={() => dispatch(increase(product))}
+                    className=' hover:text-blue-100 sm:text-2xl text-green-500 transition-all ease-in-out'>
+                    +
+                </button>
+                <button
+                    onClick={() => dispatch(removeItem(product))}
+                    className=' text-error-200 rounded  hover:text-[#dd110a] transition-all ease-in-out'>
+                    <FaTrash className='size-4' />
+                </button>
             </div>
-          
+
         </div>
     );
 }

@@ -12,14 +12,11 @@ import { TbShoppingBagCheck, TbShoppingBagExclamation, TbShoppingBagPlus } from 
 
 
 function ProductsCard({ product }) {
-
   const { id, title, price, image, rating } = product;
   const state = useSelector((store) => store.cart);
-  console.log(state)
-
+ 
   const quantity = productQuantity(state, id);
   const dispatch = useDispatch();
-
 
   return (
     <div className="shadow-lg p-1 w-64 h-fit my-2 rounded-md backdrop-blur-lg bg-[#fff]">

@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
-import { useProductsDetail } from '../context/ProductContext'
 import { truncatedTitle } from '../utils/truncate'
 import Loader from './Loader';
 
 import { FaHandHoldingDollar } from 'react-icons/fa6';
 import { IoMdArrowRoundBack } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux';
-import store from '../app/store';
 import { fetchProducts } from '../features/product/productsSlice';
 
 function ProductDetail() {

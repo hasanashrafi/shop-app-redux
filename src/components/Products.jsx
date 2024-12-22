@@ -9,11 +9,8 @@ import Loader from './Loader';
 import TopBar from '../modules/TopBar';
 
 import { filterProducts, searchProducts } from '../utils/helper';
-import Slideshow from './Slider';
 import { fetchProducts } from '../features/product/productsSlice';
 import { useDispatch, useSelector } from 'react-redux';
-
-
 
 function Products() {
   // const products = useProducts();

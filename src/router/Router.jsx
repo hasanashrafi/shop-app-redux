@@ -1,23 +1,19 @@
 import React from 'react'
+import { Provider } from 'react-redux';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
+import Home from '../components/Home';
+import store from '../app/store';
+import Layout from '../layout/Layout';
 import Products from '../components/Products';
 import NotFound from '../components/NotFound';
-import Home from '../components/Home';
-import ProductDetail from '../components/ProductDetail';
 import CheckOut from '../components/CheckOut';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-// import ProductProvider from '../context/ProductContext';
-// import CardProvider from '../context/CardContext';
-import Layout from '../layout/Layout';
-import store from '../app/store';
-import { Provider } from 'react-redux';
+import ProductDetail from '../components/ProductDetail';
+
 
 
 function Router() {
   return (
-    // <CardProvider>
-    // <ProductProvider>
-
     <Provider store={store}>
       <BrowserRouter>
         <Layout>
@@ -31,9 +27,6 @@ function Router() {
         </Layout>
       </BrowserRouter>
     </Provider>
-
-    // </ProductProvider>
-    // </CardProvider>
   )
 }
 
