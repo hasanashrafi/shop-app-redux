@@ -52,14 +52,14 @@ const Navbar = () => {
                         <div className="relative">
                             <CiShoppingCart className="size-9 cursor-pointer" onClick={handleCartToggle} />
                             {!!state.itemsCounter && (
-                                <span className="absolute flex items-center justify-center top-0 right-0 left-4   text-sm bg-error-500  rounded-full  size-5 text-center">
+                                <span className="absolute p-1 flex items-center justify-center top-0 right-0 left-4   text-sm bg-error  rounded-full  size-5 text-center">
                                     {state.itemsCounter}
                                 </span>
                             )}
                         </div>
 
                         {isHovered && (
-                            <div className="absolute w-[350px] left-0 sm:w-[550px] sm:left-2 top-10 p-3  bg-background text-dark  rounded-lg shadow-lg">
+                            <div className="bg-white/70 absolute w-[350px] left-0 sm:w-[550px] sm:left-2 top-10 p-3   text-dark  rounded-lg shadow-lg">
                                 {!state.selectedItems.length && (
                                     <p className="text-center p-3 bg-error-200 text-error-700 rounded-lg m-4">
                                         Shopping Cart Is Empty
