@@ -31,7 +31,6 @@ const Navbar = () => {
         setIsHovered(!isHovered);
     };
 
-  
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (menuRef.current && !menuRef.current.contains(event.target)) {
