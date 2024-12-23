@@ -32,7 +32,7 @@ function ProductsCard({ product }) {
   };
 
   return (
-    <div className="shadow-lg p-1 w-64 h-fit my-2 rounded-md bg-white">
+    <div className="shadow-lg p-1 w-72 h-fit my-2 rounded-md bg-white">
       <div className="flex items-center justify-between p-1">
         <p className="flex items-center gap-x-2 p-1">
           <TbShoppingBagCheck className="text-rate size-6" />
