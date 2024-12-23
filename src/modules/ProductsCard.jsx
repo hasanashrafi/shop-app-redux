@@ -19,7 +19,7 @@ function ProductsCard({ product }) {
   const dispatch = useDispatch();
 
   return (
-    <div className="shadow-lg p-1 w-64 h-fit my-2 rounded-md backdrop-blur-lg bg-[#fff]">
+    <div className="shadow-lg p-1 w-64 h-fit my-2 rounded-md  bg-white">
       <div className="flex items-center justify-between p-1">
         <p className="flex items-center gap-x-2 p-1">
           <TbShoppingBagCheck className="text-rate size-6" />
@@ -31,13 +31,13 @@ function ProductsCard({ product }) {
         </p>
       </div>
 
-      <img loading="lazy" src={image} className="bg-[#6b2bd928] p-0.5 rounded-bl-3xl rounded-tr-3xl w-[95%] h-[200px] object-fill mx-auto" />
+      <img loading="lazy" src={image} className=" p-0.5 rounded-3xl rounded-tr-3xl w-[95%] h-[200px] object-fill mx-auto" />
       <h1 className="text-center my-3 font-semibold text-primary">
         {truncatedTitle(title)}
       </h1>
 
       <div className="p-2">
-        <p className="text-dark flex items-center gap-x-2 p-2 text-gray-500">
+        <p className=" flex items-center gap-x-2 p-2 text-gray-500">
           <FaHandHoldingDollar className="text-xl" />
           {price}
         </p>
@@ -52,7 +52,7 @@ function ProductsCard({ product }) {
           {quantity > 1 && (
             <button
               onClick={() => dispatch(decrease(product))}
-              className="text-2xl text-primary hover:text-[#180add] transition-all ease-in-out"
+              className="text-2xl text-primary hover:text-error transition-all ease-in-out"
             >
               -
             </button>
