@@ -12,7 +12,7 @@ import BasketCard from '../modules/BasketCard';
 
 const Navbar = () => {
     const [state, dispatch] = useCard()
-  
+ 
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const menuRef = useRef(null);
