@@ -8,17 +8,10 @@ import BasketCard from '../modules/BasketCard';
 import { useDispatch, useSelector } from 'react-redux';
 
 const Navbar = () => {
-<<<<<<< HEAD
-    const [state, dispatch] = useCard()
- 
-=======
-    const state = useSelector(store => store.cart)
-
->>>>>>> cddf8b4fc17b64e7e073c5864ec72dc76dfeed1d
     const [isOpen, setIsOpen] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
     const menuRef = useRef(null);
-   
+    const state = useSelector(store => store.cart)
     const links = [
         { href: "/", text: "Home" },
         { href: "/", text: "About" },
