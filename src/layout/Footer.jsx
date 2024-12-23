@@ -1,5 +1,4 @@
 import React from 'react'
-import { SiFoodpanda } from 'react-icons/si'
 
 function Footer() {
     return (

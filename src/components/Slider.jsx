@@ -1,13 +1,13 @@
 import React from 'react';
-import { useProducts } from '../context/ProductContext';
 import { Slide } from 'react-slideshow-image';
 import { Link } from 'react-router-dom';
 
 import 'react-slideshow-image/dist/styles.css';
+import { useSelector } from 'react-redux';
 
 const Slideshow = () => {
-    const products = useProducts()
-    
+    const { products, loading, error } = useSelector((state) => state.products)
+
     return (
         <div className="slide-container   p-2">
             <Slide
