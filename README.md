@@ -1,6 +1,6 @@
 # React + Vite
 
-Demo : https://vercel.com/hasanashrafis-projects/shop-app-redux/2phT6ngot1dKfzSm37NHDX5esrNe
+Demo : https://shop-app-redux-rho.vercel.app/
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
